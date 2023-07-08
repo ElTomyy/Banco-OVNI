@@ -33,7 +33,7 @@ let solicitud = prompt("Usted tiene un saldo de $" + saldo + ", le gustaria hace
 solicitud = solicitud.toLowerCase()
 
 while(solicitud != "deposito" && solicitud != "retiro"){
-    alert("La opsion seleccionada no existe, intente devuelta")
+    alert("La opcion seleccionada no existe, intente devuelta")
     solicitud = prompt("Usted tiene un saldo de $" + saldo + ", le gustaria hacer un deposito o un retiro ?")
 }
 
@@ -56,7 +56,7 @@ exit = prompt("Le gutaria hacer algun otro tipo de deposito o retiro ? (si, no)"
 exit = exit.toLowerCase()
 
 while(exit != "si" && exit != "no"){
-    alert("La opsicon seleccionada no existe, intente devuelta")
+    alert("La opcicon seleccionada no existe, intente devuelta")
     exit = prompt("Le gutaria hacer algun otro tipo de deposito o retiro ? (si, no)")
 }
 }
