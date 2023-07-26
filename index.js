@@ -75,7 +75,8 @@ while (exit == "si") {
     }
 }
 
-console.log(`Este fue su registro de depositos en el dia de hoy ${cuenta1.deposito}`)
-console.log(`Este fue su registro de retiros en el dia de hoy ${cuenta1.retiro}`)
+let depo = cuenta1.deposito.map(element => element.toString()).join(", ");
+let reti = cuenta1.deposito.map(element => element.toString()).join(", ");
+console.log(`Este es tu registro de depositos: \n${depo}\n\nEste es tu registro de retiros: \n${reti}`)
 
 
