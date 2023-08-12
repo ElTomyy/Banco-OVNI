@@ -1,0 +1,30 @@
+.main h1 {
+  text-decoration: underline;
+  text-align: center;
+  z-index: -1;
+}
+.main .form {
+  display: grid;
+  border-radius: 15%;
+  margin-top: 10%;
+  padding: 10%;
+}
+.main .form .input {
+  border: solid 1px black;
+}
+.main .form .label {
+  display: block;
+  text-align: center;
+}
+.main .div_form {
+  height: 100%;
+}
+.main .div_form .form_dep {
+  width: max-content;
+}
+.main .div_form .form_dep h2 {
+  font-size: 100%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */
