@@ -34,6 +34,8 @@ function reload(usuario){
     localStorage.setItem('Usuario', JSON.stringify(usuario))
 }
 
+// Inicio de sesion y verificacion entrada de datos
+
 form.onsubmit = (event) => {
     event.preventDefault();
 
@@ -79,6 +81,8 @@ form.onsubmit = (event) => {
     form.reset()
 }
 
+// Nueva carga de la pagina
+
 const add = (usuario) => {
     this.usuario = usuario
 
@@ -88,6 +92,8 @@ const add = (usuario) => {
     saldo_html.innerHTML = `este es su saldo actual: ${usuario.saldo}`
 
     div_mod.appendChild(saldo_html)
+
+    // Form depositos
 
     let add_form1 = document.createElement("div")
     add_form1.innerHTML = `
@@ -102,6 +108,8 @@ const add = (usuario) => {
     `
     contenedor_form.appendChild(add_form1)
 
+    // Form retiros
+
     let add_form2 = document.createElement("div")
     add_form2.innerHTML = `
     <!-- RETIROS -->
@@ -115,6 +123,8 @@ const add = (usuario) => {
     `
     contenedor_form.appendChild(add_form2)
 
+    // Form eliminar cuenta
+
     let add_form3 = document.createElement("div")
     add_form3.innerHTML = `
     <!-- CUENTA -->
@@ -126,6 +136,8 @@ const add = (usuario) => {
     </form>
     `
     contenedor_form.appendChild(add_form3)
+
+    // Uso de fetch para precio dolar
 
     fetch("./db/storage.json")
     .then((resp) => resp.json())
@@ -146,6 +158,8 @@ const add = (usuario) => {
     let deposito_input = document.querySelector("#deposito_input")
     let retiro_input = document.querySelector("#retiro_input")
 
+    // Eliminacion de cuenta 
+
     form_account.onsubmit = (event) => {
         event.preventDefault()
         Swal.fire({
@@ -164,6 +178,8 @@ const add = (usuario) => {
         })
     }
 
+    // Depositos
+
     form_dep.onsubmit = (event) => {
         event.preventDefault()
         if (isNumber(deposito_input.value) === true) {
@@ -181,6 +197,8 @@ const add = (usuario) => {
 
     }
 
+    // Retiros
+    
     form_ret.onsubmit = (event) => {
         event.preventDefault()
         if (parseInt(retiro_input.value) > usuario.saldo || isNumber(retiro_input.value) === true) {
