@@ -21,11 +21,17 @@
     
     .div_form{
         height: 100%;
+        position: relative;
+
         .form_dep{
             width: max-content; 
+
             h2{
                 font-size: 100%;
                 text-align: center;
+            }
+            .btn-crear{
+                position: absolute;
             }
         }
     }

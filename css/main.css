@@ -18,6 +18,7 @@
 }
 .main .div_form {
   height: 100%;
+  position: relative;
 }
 .main .div_form .form_dep {
   width: max-content;
@@ -25,6 +26,9 @@
 .main .div_form .form_dep h2 {
   font-size: 100%;
   text-align: center;
+}
+.main .div_form .form_dep .btn-crear {
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */

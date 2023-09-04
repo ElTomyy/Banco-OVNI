@@ -120,12 +120,25 @@ const add = (usuario) => {
     <!-- CUENTA -->
     <form class="form form_dep shadow-lg" id="form_account">
         <div class="mb-3">
-            <h2>Cuenta activa</h2>
+            <h2>Cuenta activa: ${usuario.nombre} ${usuario.apellido}</h2>
         </div>
         <button type="submit" class="btn btn-primary">Eliminar Cuenta</button>
     </form>
     `
     contenedor_form.appendChild(add_form3)
+
+    fetch("./db/storage.json")
+    .then((resp) => resp.json())
+    .then((data) => {
+        const {blue, venta, compra} = data
+        let parrafo_dolar =   document.createElement("h3")
+        parrafo_dolar.innerHTML = `
+        dolar blue $${blue} -- compra $${compra} -- venta $${venta}
+        `
+
+        div_mod.appendChild(parrafo_dolar)
+    })
+    
 
     let form_account = document.querySelector("#form_account")
     let form_dep = document.querySelector("#form_dep")
@@ -137,7 +150,7 @@ const add = (usuario) => {
         event.preventDefault()
         Swal.fire({
             title: "Eliminar",
-            title: "Estas seguro que deseas eliminar el usuario ? esta accion es permanente",
+            title: "Estas seguro que deseas eliminar esta cuenta ? esta accion es permanente",
             icon: "warning",
             confirmButtonText: "Aceptar",
             cancelButtonText: "Cancelar",
