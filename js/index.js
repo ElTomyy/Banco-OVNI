@@ -34,6 +34,12 @@ function reload(usuario){
     localStorage.setItem('Usuario', JSON.stringify(usuario))
 }
 
+function loading() {
+    let loading = document.createElement("h2")
+    loading.innerHTML = 'La pagina esta cargando, espere porfavor :)'
+    div_mod.appendChild(loading)
+}
+
 // Inicio de sesion y verificacion entrada de datos
 
 form.onsubmit = (event) => {
@@ -54,7 +60,8 @@ form.onsubmit = (event) => {
                 icon: 'success'
             })
             form.remove()
-            add(usuario)
+            loading()
+            setTimeout(() => add(usuario), 5000)
 
         }
         else {
@@ -71,7 +78,8 @@ form.onsubmit = (event) => {
                     icon: 'success'
                 })
                 form.remove()
-                add(usuario)
+                loading()
+                setTimeout(() => add(usuario), 5000)
 
             }
         }
@@ -85,6 +93,9 @@ form.onsubmit = (event) => {
 
 const add = (usuario) => {
     this.usuario = usuario
+
+    let loading = document.getElementsByTagName("h2")
+    loading[1].remove() 
 
     div_mod.classList.add("container-fluid")
 
@@ -103,7 +114,7 @@ const add = (usuario) => {
           <label class="form-label label">Deposito</label>
           <input type="number" class="form-control input" placeholder="$$$" id="deposito_input">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
     </form>
     `
     contenedor_form.appendChild(add_form1)
@@ -118,7 +129,7 @@ const add = (usuario) => {
             <label for="exampleInputEmail1" class="form-label label">Retiro</label>
             <input type="number" class="form-control input" placeholder="$$$" id="retiro_input">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
     </form>
     `
     contenedor_form.appendChild(add_form2)
