@@ -201,6 +201,8 @@ const add = (usuario) => {
         }
         else {
             usuario.saldo += parseInt(deposito_input.value)
+            usuario.deposito.unshift(parseInt(deposito_input.value))
+            console.log(usuario.deposito)
             saldo_html.innerHTML = `este es su saldo actual: ${usuario.saldo}`
             reload(usuario)
         }
@@ -220,6 +222,8 @@ const add = (usuario) => {
         }
         else {
             usuario.saldo -= parseInt(retiro_input.value)
+            usuario.retiro.unshift(parseInt(retiro_input.value))
+            console.log(usuario.retiro)
             saldo_html.innerHTML = `este es su saldo actual: ${usuario.saldo}`
             reload(usuario)
         }
